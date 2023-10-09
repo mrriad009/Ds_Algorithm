@@ -23,11 +23,9 @@ int main ()
     {
                 for (int  j = 0; j < col; j++)
         {
-
             cin>>matrix[i][j];
         }
     }
-
     int bounSum=0;
     for (int i = 0; i < row; i++)
     {
@@ -46,10 +44,6 @@ int main ()
         diagonalsum += matrix[i][i];
     }
       cout << "diagonalsum Sum : " <<diagonalsum << '\n';
-
-
-
-
 
     return 0;
 }
