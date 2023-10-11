@@ -1,76 +1,58 @@
 #include <iostream>
+
 using namespace std;
 
-void mergeSort ( int arr[], int low , int high)
+int main() {
 
-{
-    if (low<high)
-    {
-        int mid = (high+low)/2;
-        
-        mergeSort(arr, low, mid);
-        mergeSort(arr, mid+1, high);
-        
-        int i= low;
-        int j= mid+1;
-        int k= 0;
-        int temp[high-low+1];
-        
-                while (i<=mid && j<=high)
-                {
-                    if (arr[i]<=arr[j])
-                    {
-                        temp[k]=arr[i];
-                        i++;
-                    }
-                        else
-                        {
-                            temp[k]=arr[j];
-                            j++;
-                        }
-                    k++;
-                }
-        
-        while (i<=mid)
-        {
-            temp[k]=arr[i];
-            i++;
-            k++;
+    int row, col;
+//input row and col size
+    cout << "Enter the number of row : ";
+    cin >> row;
+    cout << "Enter the number of col : ";
+    cin >> col;
+
+//declear 2D Array
+
+    int array[row][col];
+
+    // Take user input for the array elements
+    cout<<"Enter the elements of the matrix : "<<endl;
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            //cout<<"Enter the elements of the matrix : "<<endl;
+            cin >> array[i][j];
         }
-            while (j<=high)
-            {
-                temp[k]=arr[j];
-                j++;
-                k++;
-            }
-                for (int i=low; i<=high; i++)
-                {
-                    arr[i]=temp[i-low];
-                }
-        
     }
-    
-}
 
-int main(){
-    int n;
-    cout<<"Enter the Size of the Array  :";
-    cin>>n;
-    
-    int arr[n];
-    cout<<"Enter the Elements of the array : ";
-    for (int i=0; i<n; i++) 
-    {
-        cin>>arr[i];
+    // Initialize max and min to the first element of the array
+    int max = array[0][0];
+    int min = array[0][0];
+    int maxrow = 0 , maxcol = 0;
+    int minrow = 0  , mincol= 0;
+
+    // Find the maximum and minimum elements of the array
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+
+            if (array[i][j] > max) //get max
+            {
+                max = array[i][j];
+                maxrow=i;
+                maxcol=j;
+            }
+            if (array[i][j] < min) //get min
+            {
+                min = array[i][j];
+                minrow=i;
+                mincol=j;
+            }
+
+        }
     }
-    
-    mergeSort( arr, 0, n-1);
-    
-    cout<<"Sorted array of the givem Elements : ";
-    for (int i=0; i<n; i++) 
-    {
-       cout<< arr[i];
-    }
-    cout<<endl;   
+
+    // Print the maximum and minimum elements
+    cout << "Maximum element: " << max <<  "  position :  "<<maxrow <<" " <<maxcol<< endl;
+    cout << "Minimum element: " << min <<  "  position :  "<<minrow << " "<<mincol<< endl;
+
     return 0;
 }
