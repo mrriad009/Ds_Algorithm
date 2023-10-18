@@ -41,7 +41,7 @@ int main ()
 
     int diagonalsum = 0;
     for (int i = 0; i < row && i < col; i++) {
-        diagonalsum += matrix[i][i];
+        diagonalsum += matrix[i][j];
     }
       cout << "diagonalsum Sum : " <<diagonalsum << '\n';
 
