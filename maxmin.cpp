@@ -34,13 +34,13 @@ int main() {
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < col; j++) {
 
-            if (array[i][j] > max) //get max
+            if (array[i][j] > max) //get max value and position
             {
                 max = array[i][j];
                 maxrow=i;
                 maxcol=j;
             }
-            if (array[i][j] < min) //get min
+            if (array[i][j] < min) //get min value and the position
             {
                 min = array[i][j];
                 minrow=i;
