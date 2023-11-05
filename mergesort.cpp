@@ -70,6 +70,7 @@ int main(){
     for (int i=0; i<n; i++) 
     {
         cout << arr[i] ;
+        cout<< ",";
     }
     cout<<endl;   
     return 0; //gg
